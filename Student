@@ -1,39 +1,35 @@
+import java.util.Arrays;
 
-public abstract class Person {
-	private static int COUNT = 0;
-	private int id;
-	private String name;
+public class Student extends Person {
 
-	public Person() {
+	private int[] grades;
+
+	public Student() {
 		super();
-		this.id = ++COUNT;
-		this.name = "Person" + " " + COUNT;
+		this.grades = genrateRandomGrades();
 
 	}
 
-	public static int getCOUNT() {
-		return COUNT;
+	public Student(int[] grades) {
+		super();
+		this.grades = grades;
 	}
 
-	public int getId() {
-		return id;
+	private int[] genrateRandomGrades() {
+		int grades[] = new int[10];
+		for (int i = 0; i < grades.length; ++i) {
+			grades[i] = (int) (Math.random() * 31) + 70;
+		}
+		return grades;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public int[] getGrades() {
+		return grades;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+		return "Student [grades=" + Arrays.toString(grades) + ", toString()=" + super.toString() + "]";
 	}
 
 }
