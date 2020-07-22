@@ -1,0 +1,39 @@
+
+public abstract class Person {
+	private static int COUNT = 0;
+	private int id;
+	private String name;
+
+	public Person() {
+		super();
+		this.id = ++COUNT;
+		this.name = "Person" + " " + COUNT;
+
+	}
+
+	public static int getCOUNT() {
+		return COUNT;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + "]";
+	}
+
+}
