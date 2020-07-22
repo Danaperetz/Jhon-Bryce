@@ -1,39 +1,35 @@
 
-public abstract class Person {
-	private static int COUNT = 0;
-	private int id;
-	private String name;
 
-	public Person() {
+public class Teacher extends Person {
+
+	private static final int NUM_OF_MONTHS = 12;
+	private double[] salaries;
+
+	public Teacher() {
 		super();
-		this.id = ++COUNT;
-		this.name = "Person" + " " + COUNT;
-
+		this.salaries = genrateRandomSalaries();
 	}
 
-	public static int getCOUNT() {
-		return COUNT;
+	public Teacher(double[] salaries) {
+		super();
+		this.salaries = salaries;
 	}
 
-	public int getId() {
-		return id;
+	private double[] genrateRandomSalaries() {
+		double[] salaries = new double[12];
+		for (int i = 0; i < salaries.length; i++) {
+			salaries[i] = Math.random() * 5001 + 5000;
+		}
+		return salaries;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public double[] getSalaries() {
+		return salaries;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + "]";
+		return "Teacher [salaries=" + Arrays.toString(salaries) + ", toString()=" + super.toString() + "]";
 	}
 
 }
