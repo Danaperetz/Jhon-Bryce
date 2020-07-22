@@ -1,0 +1,26 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Person[] persons = new Person[20];
+		generatePersons();
+	}
+
+	private static Person[] generatePersons(Person[] persons) {
+		for (int i = 0; i < persons.length; i++) {
+			switch ((int) (Math.random() * 2) + 1) {
+			case 1:
+				new Teacher(salaries);
+				break;
+			case 2:
+				new Student(grades);
+				break;
+			default:
+				break;
+			}
+		}
+		return null;
+
+	}
+
+}
